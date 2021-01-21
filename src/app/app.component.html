@@ -10,12 +10,15 @@
   <div class="row">
     <div class="col-12">
       <h1 class="text-center">
-        To do
+        Todos
       </h1>
 
       <div class="card">
         <div class="card-header">
           <div class="form-group">
+            <!-- Add an keyup event listener on input. Trigger addItem method from app.component.ts -->
+            <!-- Angular give us a $event variable when using event listener.  -->
+            <!-- It contain the same object as javascript event listener -->
             <input type="text" class="form-control" (keyup)="addItem($event)">
           </div>
         </div>
@@ -48,6 +51,7 @@
     </div>
   </div>
 </div>
+
 
 
 
