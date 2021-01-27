@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-12">
       <h1 class="text-center">
-        Todos
+        Todo
       </h1>
 
       <div class="card">
@@ -24,26 +24,24 @@
         </div>
 
         <ul class="list-group list-group-flush">
-          <li *ngFor="let item of todoArray" class="list-group-item d-flex justify-content-between">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-              <label class="form-check-label" for="defaultCheck1">
-                {{ item }}
-              </label>
-            </div>
+          <li *ngFor="let item of todoArray; let itemIndex = index" class="list-group-item d-flex justify-content-between">
+            <app-checkbox [label]="item.title" [checked]="item.checked"></app-checkbox>
 
-            <button class="btn btn-outline-danger btn-sm">
+            <button class="btn btn-outline-danger btn-sm" (click)="removeItem(itemIndex)">
               x
             </button>
           </li>
         </ul>
 
         <div class="card-footer d-flex justify-content-between">
+          <app-array-size [array]="todoArray"></app-array-size>
+          
           <div>
             {{ todoArray.length }} items
           </div>
 
-          <button class="btn btn-sm btn-link">
+          <!-- *ngIf take a boolean, if true, display the element, if false, hide the element. -->
+          <button *ngIf="atLeastOneChecked" class="btn btn-sm btn-link" (click)="clearCompletedItem()">
             Clear completed
           </button>
         </div>
@@ -51,6 +49,7 @@
     </div>
   </div>
 </div>
+
 
 
 
