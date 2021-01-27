@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TodoItem} from './todo-item';
+import {todoItem} from './todo-item';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import {TodoItem} from './todo-item';
 export class AppComponent {
   title = 'todo-list';
 
-  public todoArray: Array<TodoItem> = [];
+  public todoArray: Array<todoItem> = [];
 
   /**
    * Using getter to transform the array into a boolean.
@@ -97,7 +97,7 @@ export class AppComponent {
     // }
 
     // Solution 3
-    this.todoArray = this.todoArray.filter((item: TodoItem) => {
+    this.todoArray = this.todoArray.filter((item: todoItem) => {
       // return true; // If you want to keep the element into the new array.
       // return false; // If you want to remove the element from the new array.
 
